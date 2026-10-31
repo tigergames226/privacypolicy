@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Deletion Request - Tiger Games</title>
+  <meta name="description"
+    content="Instructions and request form for deleting your user data from mobile games and applications published by Tiger Games." />
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-light: #eff6ff;
+      --border-color: #e2e8f0;
+      --accent: #0f172a;
+      --danger: #dc2626;
+      --danger-light: #fef2f2;
+      --success: #16a34a;
+      --success-light: #f0fdf4;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #0b0f19;
+        --card-bg: #131b2e;
+        --text-main: #f1f5f9;
+        --text-muted: #94a3b8;
+        --primary: #3b82f6;
+        --primary-hover: #2563eb;
+        --primary-light: #1e293b;
+        --border-color: #1e293b;
+        --accent: #f8fafc;
+        --danger: #ef4444;
+        --danger-light: #2a1215;
+        --success: #22c55e;
+        --success-light: #0f291e;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 48px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .top-nav {
+      margin-bottom: 20px;
+    }
+
+    .top-nav a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .top-nav a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.825rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background-color: var(--primary-light);
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .meta {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-top: 36px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+
+    ul,
+    ol {
+      margin-bottom: 18px;
+      padding-left: 24px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    .highlight-box {
+      background: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+
+    .data-card {
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 20px;
+      background-color: var(--bg-color);
+    }
+
+    .data-card h3 {
+      font-size: 1.05rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .data-card ul {
+      margin-bottom: 0;
+      padding-left: 20px;
+      font-size: 0.95rem;
+    }
+
+    .form-card {
+      background-color: var(--bg-color);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 28px;
+      margin-top: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.925rem;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background-color: var(--card-bg);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.15s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.15s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .status-banner {
+      display: none;
+      margin-top: 16px;
+      padding: 14px 18px;
+      border-radius: 8px;
+      background-color: var(--success-light);
+      border: 1px solid var(--success);
+      color: var(--text-main);
+      font-size: 0.925rem;
+    }
+
+    footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px 12px;
+      }
+
+      .container {
+        padding: 24px 18px;
+      }
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .form-card {
+        padding: 20px 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <nav class="top-nav">
+      <a href="index.html">&larr; Back to Privacy Policy</a>
+    </nav>
+
+    <header>
+      <span class="badge">User Data Control</span>
+      <h1>Data &amp; Account Deletion</h1>
+      <p class="meta"><strong>Developer / Publisher:</strong> Tiger Games &nbsp;|&nbsp; <strong>Support:</strong>
+        tigergames226@gmail.com</p>
+    </header>
+
+    <div class="highlight-box">
+      <p>This page provides step-by-step instructions on how to delete your game data or submit a data deletion request
+        for any mobile game or application published by <strong>Tiger Games</strong> on Google Play.</p>
+    </div>
+
+    <section>
+      <h2>1. How to Delete Local &amp; Cloud Game Data Directly</h2>
+      <p>Most games developed by <strong>Tiger Games</strong> do not require you to create an external account and store
+        your gameplay progress directly on your device or through your Google Play Games account. You can delete this
+        data immediately at any time:</p>
+      <ol>
+        <li>
+          <strong>Delete Local App Data (Android):</strong><br />
+          Open your device's <strong>Settings</strong> &gt; <strong>Apps</strong> &gt; select the <strong>[Tiger Games
+            App]</strong> &gt; <strong>Storage &amp; cache</strong> &gt; tap <strong>Clear storage / Clear data</strong>,
+          or simply uninstall the application.
+        </li>
+        <li>
+          <strong>Delete Google Play Games Cloud Data:</strong><br />
+          If the game uses Google Play Games Services for cloud saves or leaderboards, open the <strong>Play
+            Games</strong> app on your device &gt; tap the three dots (<strong>More</strong>) at the top &gt;
+          <strong>Settings</strong> &gt; <strong>Delete Play Games account &amp; data</strong>, then click
+          <strong>Delete</strong> next to the specific Tiger Games title.
+        </li>
+        <li>
+          <strong>Reset or Delete Your Advertising ID:</strong><br />
+          To unlink analytics and advertising identifiers, go to your device's <strong>Settings</strong> &gt;
+          <strong>Google</strong> &gt; <strong>All services</strong> &gt; <strong>Ads</strong>, and select
+          <strong>Reset advertising ID</strong> or <strong>Delete advertising ID</strong>.
+        </li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>2. Request Server-Side or Support Data Deletion</h2>
+      <p>If you wish to request the deletion of any server-associated records, crash/analytics identifier logs, or
+        customer support email history held by <strong>Tiger Games</strong>, you can submit a request using the form
+        below or by emailing us directly at <a href="mailto:tigergames226@gmail.com">tigergames226@gmail.com</a>.</p>
+
+      <div class="form-card">
+        <form id="deletionForm">
+          <div class="form-group">
+            <label for="gameName">Game / Application Name *</label>
+            <input type="text" id="gameName" name="gameName" placeholder="e.g., Name of the Tiger Games app" required />
+          </div>
+
+          <div class="form-group">
+            <label for="userIdentifier">Your Email or Player / Device ID (if applicable) *</label>
+            <input type="text" id="userIdentifier" name="userIdentifier"
+              placeholder="e.g., your email address, Google Play Gamer ID, or Advertising ID" required />
+          </div>
+
+          <div class="form-group">
+            <label for="requestType">What would you like to delete? *</label>
+            <select id="requestType" name="requestType" required>
+              <option value="All Associated Data & Account">Delete All Associated Data &amp; Account Records</option>
+              <option value="Analytics & Identifier Logs Only">Delete Analytics / Device Identifier Logs Only</option>
+              <option value="Customer Support Email History">Delete Customer Support Email History</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="additionalDetails">Additional Details (Optional)</label>
+            <textarea id="additionalDetails" name="additionalDetails"
+              placeholder="Provide any extra details to help us locate your data..."></textarea>
+          </div>
+
+          <button type="submit" class="btn">Submit Deletion Request</button>
+
+          <div id="statusBanner" class="status-banner">
+            <strong>Your email client has been opened with your deletion request details.</strong><br />
+            If it did not open automatically, please send an email directly to <a
+              href="mailto:tigergames226@gmail.com">tigergames226@gmail.com</a> with the subject <em>"Data Deletion
+              Request - Tiger Games"</em>.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section>
+      <h2>3. Data Deletion &amp; Retention Policy</h2>
+      <p>In accordance with Google Play's Data Safety requirements, below is a summary of what data is deleted and how
+        retention is handled when you request deletion:</p>
+
+      <div class="data-grid">
+        <div class="data-card">
+          <h3>Data That Will Be Deleted</h3>
+          <ul>
+            <li>Player/Account identifiers linked to our backend (if applicable to the game)</li>
+            <li>Cloud-saved progress stored on Tiger Games servers</li>
+            <li>Customer support emails and contact records</li>
+            <li>Identifier-linked diagnostic or analytics records under our direct control</li>
+          </ul>
+        </div>
+
+        <div class="data-card">
+          <h3>Data That May Be Retained</h3>
+          <ul>
+            <li><strong>Aggregated / Anonymized Data:</strong> Non-identifiable gameplay statistics and crash summaries
+              that cannot be linked back to any individual device or user.</li>
+            <li><strong>Legal &amp; Transaction Records:</strong> Google Play purchase receipts or records required for
+              tax, fraud prevention, or legal compliance.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p><strong>Processing Timeframe:</strong> All verified data deletion requests are processed and permanently
+        completed within <strong>7 to 30 days</strong> of receipt.</p>
+    </section>
+
+    <section>
+      <h2>4. Contact Us</h2>
+      <p>If you have any questions about data deletion or need assistance, please reach out to us:</p>
+      <p>
+        <strong>Publisher / Studio:</strong> Tiger Games<br />
+        <strong>Email:</strong> <a
+          href="mailto:tigergames226@gmail.com?subject=Data%20Deletion%20Request%20-%20Tiger%20Games">tigergames226@gmail.com</a><br />
+        <strong>Privacy Policy:</strong> <a href="index.html">View Full Privacy Policy</a>
+      </p>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Tiger Games. All rights reserved. &nbsp;|&nbsp; <a href="index.html">Privacy Policy</a></p>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('deletionForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var gameName = document.getElementById('gameName').value.trim();
+      var userIdentifier = document.getElementById('userIdentifier').value.trim();
+      var requestType = document.getElementById('requestType').value;
+      var details = document.getElementById('additionalDetails').value.trim();
+
+      var subject = encodeURIComponent('Data Deletion Request - ' + gameName + ' (Tiger Games)');
+      var bodyLines = [
+        'Hello Tiger Games Support,',
+        '',
+        'I would like to request the deletion of my data in accordance with your Privacy Policy.',
+        '',
+        '- Game / App Name: ' + gameName,
+        '- Email / Player / Device ID: ' + userIdentifier,
+        '- Deletion Scope: ' + requestType,
+        '- Additional Details: ' + (details || 'N/A'),
+        '',
+        'Please confirm once my data has been permanently deleted.',
+        'Thank you.'
+      ];
+      var body = encodeURIComponent(bodyLines.join('\n'));
+
+      window.location.href = 'mailto:tigergames226@gmail.com?subject=' + subject + '&body=' + body;
+      document.getElementById('statusBanner').style.display = 'block';
+    });
+  </script>
+</body>
+
+</html>
+
